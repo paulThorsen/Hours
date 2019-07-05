@@ -8,19 +8,50 @@
 
 import SwiftUI
 
+
 struct ContentView : View {
-    @State private var selection = 0
- 
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
-        TabbedView(selection: $selection){
-            Text("First View")
-                .font(.title)
-                .tabItemLabel(Image("first"))
+        NavigationView {
+            TabbedView {
+                VStack(spacing: 0) {
+                    WeekView()
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(Color("textGray"))
+                    AllHoursView()
+                }
+//                .tabItem(Image("Calendar"))
+//                .tabItem(Text("Calendar"))
                 .tag(0)
-            Text("Second View")
-                .font(.title)
-                .tabItemLabel(Image("second"))
-                .tag(1)
+            
+                
+                
+            HStack {
+                ToDoView().environmentObject(userData)
+            }
+//            .tabItem(Image("To-Do"))
+//            .tabItem(Text("To-Do"))
+            .tag(1)
+                
+            
+        }
+        .navigationBarTitle(Text("Hours"), displayMode: .inline)
+                .navigationBarItems(leading: Button(action: {}) {
+                    Image("Today")
+                    .imageScale(.large)
+                    .accessibility(label: Text("Today"))
+                    .padding()
+                    .foregroundColor(Color("red"))
+                    }, trailing:
+                    PresentationLink(destination: Settings().environmentObject(userData)) {
+                Image("Settings")
+                    .imageScale(.large)
+                    .accessibility(label: Text("Settings"))
+                    .padding()
+                    .foregroundColor(Color("red"))
+            })
         }
     }
 }
@@ -28,7 +59,8 @@ struct ContentView : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        return ContentView()
+            .environmentObject(UserData())
     }
 }
 #endif
