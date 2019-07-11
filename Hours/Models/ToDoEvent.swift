@@ -13,7 +13,7 @@ import Combine
 class ToDoEvent: HourEvent {
     let toDoChanged = PassthroughSubject<ToDoEvent, Never>()
 
-    var isCompleted: Bool = true {
+    var isCompleted: Bool = false {
         didSet {
             toDoChanged.send(self)
         }
@@ -31,7 +31,7 @@ class ToDoEvent: HourEvent {
         }
     }
 
-    var color: Color = Color("orange") {
+    var color: String = "orange" {
         didSet {
             toDoChanged.send(self)
         }
@@ -42,17 +42,14 @@ class ToDoEvent: HourEvent {
             toDoChanged.send(self)
         }
     }
-
-    var image: String = "notDone" {
-        didSet {
-            toDoChanged.send(self)
-        }
-    }
-
-    func updateColor(newColor: Color) {
-        self.color = newColor
-    }
     
+    enum Colors: String, CaseIterable {
+        case red = "red"
+        case green = "green"
+        case orange = "orange"
+        case gray = "borderGray"
+    }
+
 //    var super.eventTitle: String = "" {
 //        didSet {
 //            toDoChanged.send(self)

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ToDoEventView : View {
     @EnvironmentObject private var userData: UserData
-    @State var toDo: ToDoEvent
+    @ObjectBinding var toDo: ToDoEvent
     
     var toDoIndex: Int {
         userData.toDoEvents.firstIndex(where: { $0.id == toDo.id })!
@@ -20,11 +20,11 @@ struct ToDoEventView : View {
         ZStack {
             Rectangle()
                 .frame(height: CELL_HEIGHT)
-                .foregroundColor(self.toDo.color)
+                .foregroundColor(Color(self.toDo.color))
             
             HStack {
                 Button(action: {
-                    self.userData.toDoEvents[self.toDoIndex].isCompleted.toggle()
+                    self.userData.toDoEvents[self.toDoIndex].isCompleted.toggle(); self.userData.deadToggle.toggle()
                 }) {
                     Image("notDone")
                         .foregroundColor(Color("textGray"))
@@ -32,15 +32,19 @@ struct ToDoEventView : View {
                         .blendMode(.multiply)
                     
                 }
-                Text(self.userData.toDoEvents[self.toDoIndex].eventTitle)
-                    .color(.white)
-                    .bold()
+                TextField("Title", text: $userData.toDoEvents[self.toDoIndex].eventTitle)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.leading)
+                    .truncationMode(.tail)
                 
-                Spacer()
-                Image("more")
-                    .foregroundColor(Color("textGray"))
-                    .padding()
-                    .blendMode(.multiply)
+                Spacer().frame(width: 10)
+                
+                PresentationLink(destination: ToDoEditModal(toDo: toDo)) {
+                    Image("more")
+                        .foregroundColor(Color("textGray"))
+                        .padding()
+                        .blendMode(.multiply)
+                }
             }
         }
     }

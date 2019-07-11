@@ -9,11 +9,24 @@
 import SwiftUI
 
 struct PlannableTimeRow : View {
+    @State var isSelected = false
+    
     var body: some View {
-        HStack {
-            Rectangle()
-                .frame(height: CELL_HEIGHT)
-                .foregroundColor(.white)
+        Button(action: {self.isSelected.toggle()}) {
+            if !self.isSelected {
+                HStack {
+                    Rectangle()
+                        .frame(height: CELL_HEIGHT)
+                        .foregroundColor(Color("cellWhite"))
+                }
+            } else {
+                HStack {
+                    Rectangle()
+                        .frame(height: CELL_HEIGHT)
+                        .foregroundColor(Color("lightRed"))
+                        .border(Color("red"), width: 2)
+                }
+            }
         }
     }
 }

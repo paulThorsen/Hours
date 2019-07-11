@@ -18,7 +18,7 @@ struct Settings : View {
                 Toggle(isOn: $userData.iCloudCalenderOn) {
                     Text("Show iCloud Events")
                 }
-                Divider()
+            HorizontalDivider(borderColor: Color("borderGray"))
 
                 VStack(alignment: .leading) {
 

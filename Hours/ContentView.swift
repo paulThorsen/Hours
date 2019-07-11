@@ -34,8 +34,6 @@ struct ContentView : View {
 //            .tabItem(Image("To-Do"))
 //            .tabItem(Text("To-Do"))
             .tag(1)
-                
-            
         }
         .navigationBarTitle(Text("Hours"), displayMode: .inline)
                 .navigationBarItems(leading: Button(action: {}) {

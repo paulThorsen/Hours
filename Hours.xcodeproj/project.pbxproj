@@ -8,19 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4808A7B922CBADCA0025B820 /* DayPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4808A7B822CBADCA0025B820 /* DayPlaceHolder.swift */; };
-		4808A7BD22CBC5F50025B820 /* ToDoEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4808A7BC22CBC5F50025B820 /* ToDoEventView.swift */; };
 		4855B0B022BDB45800188DC7 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855B0AF22BDB45800188DC7 /* CalendarEvent.swift */; };
-		4855B0B222BDB81A00188DC7 /* ColorChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855B0B122BDB81A00188DC7 /* ColorChoiceView.swift */; };
 		485C176A22C5D9E500E736CF /* HourOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C176922C5D9E500E736CF /* HourOfDay.swift */; };
 		485C176C22C5E5D800E736CF /* HourRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C176B22C5E5D800E736CF /* HourRow.swift */; };
 		485C177022C5E9CC00E736CF /* AllHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C176F22C5E9CC00E736CF /* AllHoursView.swift */; };
 		486360FD22BDD46600A510DB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360FC22BDD46600A510DB /* Settings.swift */; };
+		4864D15D22D19521009490D8 /* ColorSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D15C22D19521009490D8 /* ColorSelection.swift */; };
+		4864D16122D1952B009490D8 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D16022D1952B009490D8 /* ColorButton.swift */; };
+		4864D16522D592F9009490D8 /* TEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D16422D592F9009490D8 /* TEST.swift */; };
+		4864D16B22D59341009490D8 /* CompletedToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D16622D59341009490D8 /* CompletedToDoView.swift */; };
+		4864D16D22D59341009490D8 /* ToDoEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D16822D59341009490D8 /* ToDoEventView.swift */; };
+		486AF66222D14A3900F2509D /* ToDoEditModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486AF66122D14A3900F2509D /* ToDoEditModal.swift */; };
 		4881000422BB3BD40075A8DE /* HoursTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881000322BB3BD40075A8DE /* HoursTests.swift */; };
 		4881000F22BB3BD40075A8DE /* HoursUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881000E22BB3BD40075A8DE /* HoursUITests.swift */; };
 		4881001F22BC7B240075A8DE /* HourEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881001E22BC7B240075A8DE /* HourEvent.swift */; };
 		4881002122BC89020075A8DE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881002022BC89020075A8DE /* UserData.swift */; };
 		4881002322BC89CE0075A8DE /* ToDoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881002222BC89CE0075A8DE /* ToDoEvent.swift */; };
-		4881002922BC92D60075A8DE /* ColorSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881002822BC92D60075A8DE /* ColorSquare.swift */; };
 		4881FFED22BB3BD20075A8DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881FFEC22BB3BD20075A8DE /* AppDelegate.swift */; };
 		4881FFEF22BB3BD20075A8DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881FFEE22BB3BD20075A8DE /* SceneDelegate.swift */; };
 		4881FFF122BB3BD20075A8DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881FFF022BB3BD20075A8DE /* ContentView.swift */; };
@@ -33,7 +36,6 @@
 		48AB032B22C86ADF00371EAC /* SelectedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB032A22C86ADF00371EAC /* SelectedDay.swift */; };
 		48D30F9622CC595300CC8E39 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D30F9522CC595300CC8E39 /* ToDoView.swift */; };
 		48DA595122CC0B8700EB2180 /* PlannableTimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA595022CC0B8700EB2180 /* PlannableTimeRow.swift */; };
-		48DA595322CC332D00EB2180 /* CompletedToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA595222CC332D00EB2180 /* CompletedToDoView.swift */; };
 		48F50D2B22C8167C00EE84A1 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F50D2A22C8167C00EE84A1 /* WeekView.swift */; };
 		48F50D2D22C816B100EE84A1 /* DaySelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F50D2C22C816B100EE84A1 /* DaySelect.swift */; };
 /* End PBXBuildFile section */
@@ -57,14 +59,18 @@
 
 /* Begin PBXFileReference section */
 		4808A7B822CBADCA0025B820 /* DayPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlaceHolder.swift; sourceTree = "<group>"; };
-		4808A7BC22CBC5F50025B820 /* ToDoEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoEventView.swift; sourceTree = "<group>"; };
 		48451BFC22CDB27F00497BF4 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		4855B0AF22BDB45800188DC7 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
-		4855B0B122BDB81A00188DC7 /* ColorChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChoiceView.swift; sourceTree = "<group>"; };
 		485C176922C5D9E500E736CF /* HourOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourOfDay.swift; sourceTree = "<group>"; };
 		485C176B22C5E5D800E736CF /* HourRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourRow.swift; sourceTree = "<group>"; };
 		485C176F22C5E9CC00E736CF /* AllHoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHoursView.swift; sourceTree = "<group>"; };
 		486360FC22BDD46600A510DB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4864D15C22D19521009490D8 /* ColorSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelection.swift; sourceTree = "<group>"; };
+		4864D16022D1952B009490D8 /* ColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
+		4864D16422D592F9009490D8 /* TEST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEST.swift; sourceTree = "<group>"; };
+		4864D16622D59341009490D8 /* CompletedToDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedToDoView.swift; sourceTree = "<group>"; };
+		4864D16822D59341009490D8 /* ToDoEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEventView.swift; sourceTree = "<group>"; };
+		486AF66122D14A3900F2509D /* ToDoEditModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoEditModal.swift; sourceTree = "<group>"; };
 		4881000322BB3BD40075A8DE /* HoursTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursTests.swift; sourceTree = "<group>"; };
 		4881000522BB3BD40075A8DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4881000A22BB3BD40075A8DE /* HoursUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoursUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +79,6 @@
 		4881001E22BC7B240075A8DE /* HourEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourEvent.swift; sourceTree = "<group>"; };
 		4881002022BC89020075A8DE /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		4881002222BC89CE0075A8DE /* ToDoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoEvent.swift; sourceTree = "<group>"; };
-		4881002822BC92D60075A8DE /* ColorSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSquare.swift; sourceTree = "<group>"; };
 		4881FFE922BB3BD20075A8DE /* Hours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4881FFEC22BB3BD20075A8DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4881FFEE22BB3BD20075A8DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +94,9 @@
 		48A584DB22C83B4400BAF3C9 /* HorizontalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDivider.swift; sourceTree = "<group>"; };
 		48AB032422C842D600371EAC /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		48AB032A22C86ADF00371EAC /* SelectedDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDay.swift; sourceTree = "<group>"; };
+		48C82AAF22D034F0003EC8C6 /* libinfo.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libinfo.tbd; path = usr/lib/libinfo.tbd; sourceTree = SDKROOT; };
 		48D30F9522CC595300CC8E39 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		48DA595022CC0B8700EB2180 /* PlannableTimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannableTimeRow.swift; sourceTree = "<group>"; };
-		48DA595222CC332D00EB2180 /* CompletedToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedToDoView.swift; sourceTree = "<group>"; };
 		48F50D2A22C8167C00EE84A1 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		48F50D2C22C816B100EE84A1 /* DaySelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,8 +129,8 @@
 		4808A7BE22CBC7470025B820 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				48DA595222CC332D00EB2180 /* CompletedToDoView.swift */,
-				4808A7BC22CBC5F50025B820 /* ToDoEventView.swift */,
+				4864D16622D59341009490D8 /* CompletedToDoView.swift */,
+				4864D16822D59341009490D8 /* ToDoEventView.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				4881001E22BC7B240075A8DE /* HourEvent.swift */,
 				4881002022BC89020075A8DE /* UserData.swift */,
 				4881002222BC89CE0075A8DE /* ToDoEvent.swift */,
+				4864D16422D592F9009490D8 /* TEST.swift */,
 				4855B0AF22BDB45800188DC7 /* CalendarEvent.swift */,
 			);
 			path = Models;
@@ -162,12 +168,10 @@
 		4881002722BC92C20075A8DE /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
+				489C2FAA22D15D9800006D25 /* Modal */,
 				48AB032922C86AB200371EAC /* Day Selection */,
-				4881002822BC92D60075A8DE /* ColorSquare.swift */,
-				4855B0B122BDB81A00188DC7 /* ColorChoiceView.swift */,
 				48AB032622C8447800371EAC /* Dividers */,
 				48D30F9722CC59EE00CC8E39 /* Calendar Rows */,
-				48D30F9522CC595300CC8E39 /* ToDoView.swift */,
 				4808A7BE22CBC7470025B820 /* ToDo */,
 			);
 			path = "Supporting Views";
@@ -201,9 +205,9 @@
 				48AB032422C842D600371EAC /* Support.swift */,
 				4881001D22BC7ADF0075A8DE /* Models */,
 				4881002722BC92C20075A8DE /* Supporting Views */,
-				485C176F22C5E9CC00E736CF /* AllHoursView.swift */,
 				4881FFF022BB3BD20075A8DE /* ContentView.swift */,
-				48F50D2A22C8167C00EE84A1 /* WeekView.swift */,
+				486AF66122D14A3900F2509D /* ToDoEditModal.swift */,
+				48D30F9522CC595300CC8E39 /* ToDoView.swift */,
 				4881FFEE22BB3BD20075A8DE /* SceneDelegate.swift */,
 				486360FC22BDD46600A510DB /* Settings.swift */,
 				4881FFF722BB3BD40075A8DE /* LaunchScreen.storyboard */,
@@ -225,11 +229,21 @@
 		4887A56522CDADF700802F69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48C82AAF22D034F0003EC8C6 /* libinfo.tbd */,
 				48451BFC22CDB27F00497BF4 /* libc++.tbd */,
 				4887A56B22CDAF9500802F69 /* Foundation.framework */,
 				4887A56622CDADF700802F69 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		489C2FAA22D15D9800006D25 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				4864D15C22D19521009490D8 /* ColorSelection.swift */,
+				4864D16022D1952B009490D8 /* ColorButton.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		48AB032622C8447800371EAC /* Dividers */ = {
@@ -244,6 +258,7 @@
 		48AB032922C86AB200371EAC /* Day Selection */ = {
 			isa = PBXGroup;
 			children = (
+				48F50D2A22C8167C00EE84A1 /* WeekView.swift */,
 				48F50D2C22C816B100EE84A1 /* DaySelect.swift */,
 				4808A7B822CBADCA0025B820 /* DayPlaceHolder.swift */,
 				48AB032A22C86ADF00371EAC /* SelectedDay.swift */,
@@ -254,6 +269,7 @@
 		48D30F9722CC59EE00CC8E39 /* Calendar Rows */ = {
 			isa = PBXGroup;
 			children = (
+				485C176F22C5E9CC00E736CF /* AllHoursView.swift */,
 				485C176922C5D9E500E736CF /* HourOfDay.swift */,
 				48DA595022CC0B8700EB2180 /* PlannableTimeRow.swift */,
 				485C176B22C5E5D800E736CF /* HourRow.swift */,
@@ -400,28 +416,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4881002922BC92D60075A8DE /* ColorSquare.swift in Sources */,
-				48DA595322CC332D00EB2180 /* CompletedToDoView.swift in Sources */,
+				4864D16B22D59341009490D8 /* CompletedToDoView.swift in Sources */,
 				4881002322BC89CE0075A8DE /* ToDoEvent.swift in Sources */,
+				4864D16D22D59341009490D8 /* ToDoEventView.swift in Sources */,
 				48F50D2D22C816B100EE84A1 /* DaySelect.swift in Sources */,
 				4855B0B022BDB45800188DC7 /* CalendarEvent.swift in Sources */,
 				48AB032522C842D600371EAC /* Support.swift in Sources */,
 				4881FFED22BB3BD20075A8DE /* AppDelegate.swift in Sources */,
+				4864D16122D1952B009490D8 /* ColorButton.swift in Sources */,
+				486AF66222D14A3900F2509D /* ToDoEditModal.swift in Sources */,
 				4881FFEF22BB3BD20075A8DE /* SceneDelegate.swift in Sources */,
+				4864D16522D592F9009490D8 /* TEST.swift in Sources */,
 				48AB032B22C86ADF00371EAC /* SelectedDay.swift in Sources */,
 				485C176A22C5D9E500E736CF /* HourOfDay.swift in Sources */,
 				48D30F9622CC595300CC8E39 /* ToDoView.swift in Sources */,
 				485C176C22C5E5D800E736CF /* HourRow.swift in Sources */,
-				4855B0B222BDB81A00188DC7 /* ColorChoiceView.swift in Sources */,
 				4881001F22BC7B240075A8DE /* HourEvent.swift in Sources */,
 				4808A7B922CBADCA0025B820 /* DayPlaceHolder.swift in Sources */,
 				48A584DA22C83B1600BAF3C9 /* VerticalDivider.swift in Sources */,
+				4864D15D22D19521009490D8 /* ColorSelection.swift in Sources */,
 				48DA595122CC0B8700EB2180 /* PlannableTimeRow.swift in Sources */,
 				4881002122BC89020075A8DE /* UserData.swift in Sources */,
 				48F50D2B22C8167C00EE84A1 /* WeekView.swift in Sources */,
 				485C177022C5E9CC00E736CF /* AllHoursView.swift in Sources */,
 				486360FD22BDD46600A510DB /* Settings.swift in Sources */,
-				4808A7BD22CBC5F50025B820 /* ToDoEventView.swift in Sources */,
 				4881FFF122BB3BD20075A8DE /* ContentView.swift in Sources */,
 				48A584DC22C83B4400BAF3C9 /* HorizontalDivider.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CompletedToDoView : View {
     @EnvironmentObject private var userData: UserData
-    @State var toDo: ToDoEvent
+    @ObjectBinding var toDo: ToDoEvent
     
     var toDoIndex: Int {
         userData.toDoEvents.firstIndex(where: { $0.id == toDo.id })!
@@ -20,23 +20,29 @@ struct CompletedToDoView : View {
         ZStack {
             Rectangle()
                 .frame(height: CELL_HEIGHT)
-                .foregroundColor(.white)
+                .foregroundColor(Color("completedToDo"))
             
             HStack {
-                Button(action: {
-                    self.userData.toDoEvents[self.toDoIndex].isCompleted.toggle()
-                }) {
+                
+//                Button(action: {
+//                    self.userData.toDoEvents[self.toDoIndex].isCompleted.toggle(); self.userData.deadToggle.toggle()
+//                }) {
                     Image("done")
                         .foregroundColor(Color("green"))
                         .padding()
                         .blendMode(.multiply)
                     
-                }
+//                }
                 Text(self.userData.toDoEvents[self.toDoIndex].eventTitle)
-                    .bold()
-                    .color(Color("textGray"))
+                    .color(Color("mainTextGray"))
                 
                 Spacer()
+                PresentationLink(destination: ToDoEditModal(toDo: toDo)) {
+                    Image("more")
+                        .foregroundColor(Color("textGray"))
+                        .padding()
+                        .blendMode(.multiply)
+                }
             }
         }
     }

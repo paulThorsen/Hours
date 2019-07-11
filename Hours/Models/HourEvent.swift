@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 class HourEvent: BindableObject {
+    let uuid = UUID().uuidString
     let didChange = PassthroughSubject<HourEvent, Never>()
     
     var eventStartTime: Date = Date() {

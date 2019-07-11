@@ -20,7 +20,7 @@ struct DaySelect : View {
         ZStack {
                 Rectangle()
                     .frame(width: 62, height: 62)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("cellWhite"))
                 
                 VStack {
                     Text(String(dayOfMonth))
