@@ -15,7 +15,6 @@
 		486360FD22BDD46600A510DB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360FC22BDD46600A510DB /* Settings.swift */; };
 		4864D15D22D19521009490D8 /* ColorSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D15C22D19521009490D8 /* ColorSelection.swift */; };
 		4864D16122D1952B009490D8 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D16022D1952B009490D8 /* ColorButton.swift */; };
-		4864D16522D592F9009490D8 /* TEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D16422D592F9009490D8 /* TEST.swift */; };
 		4864D16B22D59341009490D8 /* CompletedToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D16622D59341009490D8 /* CompletedToDoView.swift */; };
 		4864D16D22D59341009490D8 /* ToDoEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4864D16822D59341009490D8 /* ToDoEventView.swift */; };
 		486AF66222D14A3900F2509D /* ToDoEditModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486AF66122D14A3900F2509D /* ToDoEditModal.swift */; };
@@ -35,6 +34,7 @@
 		48AB032522C842D600371EAC /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB032422C842D600371EAC /* Support.swift */; };
 		48AB032B22C86ADF00371EAC /* SelectedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB032A22C86ADF00371EAC /* SelectedDay.swift */; };
 		48D30F9622CC595300CC8E39 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D30F9522CC595300CC8E39 /* ToDoView.swift */; };
+		48D7610922DAF17000BE67B1 /* TimeInHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7610822DAF17000BE67B1 /* TimeInHour.swift */; };
 		48DA595122CC0B8700EB2180 /* PlannableTimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA595022CC0B8700EB2180 /* PlannableTimeRow.swift */; };
 		48F50D2B22C8167C00EE84A1 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F50D2A22C8167C00EE84A1 /* WeekView.swift */; };
 		48F50D2D22C816B100EE84A1 /* DaySelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F50D2C22C816B100EE84A1 /* DaySelect.swift */; };
@@ -67,7 +67,6 @@
 		486360FC22BDD46600A510DB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4864D15C22D19521009490D8 /* ColorSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelection.swift; sourceTree = "<group>"; };
 		4864D16022D1952B009490D8 /* ColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
-		4864D16422D592F9009490D8 /* TEST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEST.swift; sourceTree = "<group>"; };
 		4864D16622D59341009490D8 /* CompletedToDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedToDoView.swift; sourceTree = "<group>"; };
 		4864D16822D59341009490D8 /* ToDoEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEventView.swift; sourceTree = "<group>"; };
 		486AF66122D14A3900F2509D /* ToDoEditModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoEditModal.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		48AB032A22C86ADF00371EAC /* SelectedDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDay.swift; sourceTree = "<group>"; };
 		48C82AAF22D034F0003EC8C6 /* libinfo.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libinfo.tbd; path = usr/lib/libinfo.tbd; sourceTree = SDKROOT; };
 		48D30F9522CC595300CC8E39 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
+		48D7610822DAF17000BE67B1 /* TimeInHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInHour.swift; sourceTree = "<group>"; };
 		48DA595022CC0B8700EB2180 /* PlannableTimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannableTimeRow.swift; sourceTree = "<group>"; };
 		48F50D2A22C8167C00EE84A1 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		48F50D2C22C816B100EE84A1 /* DaySelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelect.swift; sourceTree = "<group>"; };
@@ -159,7 +159,6 @@
 				4881001E22BC7B240075A8DE /* HourEvent.swift */,
 				4881002022BC89020075A8DE /* UserData.swift */,
 				4881002222BC89CE0075A8DE /* ToDoEvent.swift */,
-				4864D16422D592F9009490D8 /* TEST.swift */,
 				4855B0AF22BDB45800188DC7 /* CalendarEvent.swift */,
 			);
 			path = Models;
@@ -270,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				485C176F22C5E9CC00E736CF /* AllHoursView.swift */,
+				48D7610822DAF17000BE67B1 /* TimeInHour.swift */,
 				485C176922C5D9E500E736CF /* HourOfDay.swift */,
 				48DA595022CC0B8700EB2180 /* PlannableTimeRow.swift */,
 				485C176B22C5E5D800E736CF /* HourRow.swift */,
@@ -426,7 +426,6 @@
 				4864D16122D1952B009490D8 /* ColorButton.swift in Sources */,
 				486AF66222D14A3900F2509D /* ToDoEditModal.swift in Sources */,
 				4881FFEF22BB3BD20075A8DE /* SceneDelegate.swift in Sources */,
-				4864D16522D592F9009490D8 /* TEST.swift in Sources */,
 				48AB032B22C86ADF00371EAC /* SelectedDay.swift in Sources */,
 				485C176A22C5D9E500E736CF /* HourOfDay.swift in Sources */,
 				48D30F9622CC595300CC8E39 /* ToDoView.swift in Sources */,
@@ -435,6 +434,7 @@
 				4808A7B922CBADCA0025B820 /* DayPlaceHolder.swift in Sources */,
 				48A584DA22C83B1600BAF3C9 /* VerticalDivider.swift in Sources */,
 				4864D15D22D19521009490D8 /* ColorSelection.swift in Sources */,
+				48D7610922DAF17000BE67B1 /* TimeInHour.swift in Sources */,
 				48DA595122CC0B8700EB2180 /* PlannableTimeRow.swift in Sources */,
 				4881002122BC89020075A8DE /* UserData.swift in Sources */,
 				48F50D2B22C8167C00EE84A1 /* WeekView.swift in Sources */,

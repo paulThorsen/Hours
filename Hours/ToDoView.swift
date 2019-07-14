@@ -30,9 +30,9 @@ struct ToDoView : View {
             VStack(spacing: 0) {
                 HorizontalDivider(borderColor: Color("borderGray"))
                 ForEach(self.userData.toDoEvents.identified(by: \.uuid)) { toDo in
-////                    var toDoIndex: Int {
-////                        toDoEvents.firstIndex(where: { $0.id == toDo.id })
-////                    }
+//                    var toDoIndex: Int {
+//                        toDoEvents.firstIndex(where: { $0.id == toDo.id })
+//                    }
                     if !toDo.isCompleted {
                         ToDoEventView(toDo: toDo, updateParent: self.$didChange)
                         HorizontalDivider(borderColor: Color("borderGray"))

@@ -17,9 +17,9 @@ struct ContentView : View {
             TabbedView {
                 VStack(spacing: 0) {
                     WeekView()
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(Color("textGray"))
+                    HorizontalDivider(borderColor: Color("borderGray"))
+                    TimeInHour().offset(y: 1)
+                    HorizontalDivider(borderColor: Color("textGray"))
                     AllHoursView()
                 }
                 .tabItemLabel(VStack {
