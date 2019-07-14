@@ -11,35 +11,34 @@ import SwiftUI
 import Combine
 
 class ToDoEvent: HourEvent {
-    let toDoChanged = PassthroughSubject<ToDoEvent, Never>()
 
     var isCompleted: Bool = false {
         didSet {
-            toDoChanged.send(self)
+            didChange.send(self)
         }
     }
 
     var minutesSpent: Int = 0 {
         didSet {
-            toDoChanged.send(self)
+            didChange.send(self)
         }
     }
 
     var dateCompleted: Date = Date() {
         didSet {
-            toDoChanged.send(self)
+            didChange.send(self)
         }
     }
 
     var color: String = "orange" {
         didSet {
-            toDoChanged.send(self)
+            didChange.send(self)
         }
     }
 
     var notes: String = "" {
         didSet {
-            toDoChanged.send(self)
+            didChange.send(self)
         }
     }
     

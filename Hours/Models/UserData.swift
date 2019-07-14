@@ -24,27 +24,14 @@ final class UserData: BindableObject {
     
     var toDoEvents: [ToDoEvent] = [] {
         didSet {
+            updateZeroToDoEvents()
             didChange.send(self)
-            updateZeroToDoEvents()            
         }
     }
     
     var zeroToDoEvents: Bool = true {
         didSet {
             didChange.send(self)
-        }
-    }
-    
-//    var completedToDos: [ToDoEvent] = [] {
-//        didSet {
-//            didChange.send(self)
-//        }
-//    }
-    
-    var deadToggle: Bool = false {
-        didSet {
-            didChange.send(self)
-            updateZeroToDoEvents()
         }
     }
     
@@ -73,9 +60,10 @@ final class UserData: BindableObject {
     }
     
     func removeToDo(id: String) {
-        for i in 1...self.toDoEvents.count {
+        for i in 0...self.toDoEvents.count - 1 {
             if self.toDoEvents[i].uuid == id {
                 toDoEvents.remove(at: i)
+                updateZeroToDoEvents() 
                 break
             }
         }

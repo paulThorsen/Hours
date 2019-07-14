@@ -27,14 +27,14 @@ struct PlannableTimeRow : View {
                         .border(Color("red"), width: 2)
                 }
             }
-        }
+        }.accentColor(.black)
     }
 }
 
 #if DEBUG
 struct PlannableTimeRow_Previews : PreviewProvider {
     static var previews: some View {
-        PlannableTimeRow()
+        PlannableTimeRow(isSelected: true)
     }
 }
 #endif

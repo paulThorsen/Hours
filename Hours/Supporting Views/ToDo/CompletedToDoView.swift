@@ -23,16 +23,10 @@ struct CompletedToDoView : View {
                 .foregroundColor(Color("completedToDo"))
             
             HStack {
-                
-//                Button(action: {
-//                    self.userData.toDoEvents[self.toDoIndex].isCompleted.toggle(); self.userData.deadToggle.toggle()
-//                }) {
-                    Image("done")
-                        .foregroundColor(Color("green"))
-                        .padding()
-                        .blendMode(.multiply)
-                    
-//                }
+                Image("done")
+                    .foregroundColor(Color("green"))
+                    .padding()
+                    .blendMode(.multiply)
                 Text(self.userData.toDoEvents[self.toDoIndex].eventTitle)
                     .color(Color("mainTextGray"))
                 

@@ -22,17 +22,22 @@ struct ContentView : View {
                         .foregroundColor(Color("textGray"))
                     AllHoursView()
                 }
-//                .tabItem(Image("Calendar"))
-//                .tabItem(Text("Calendar"))
+                .tabItemLabel(VStack {
+                    Image("Calendar").accentColor(Color("red"))
+                    Text("Calendar").accentColor(Color("red"))
+                })
                 .tag(0)
             
                 
                 
             HStack {
-                ToDoView().environmentObject(userData)
+                ToDoView()
+                    .environmentObject(userData)
             }
-//            .tabItem(Image("To-Do"))
-//            .tabItem(Text("To-Do"))
+            .tabItemLabel(VStack {
+                Image("To-Do")
+                Text("To-Do")
+            })
             .tag(1)
         }
         .navigationBarTitle(Text("Hours"), displayMode: .inline)
