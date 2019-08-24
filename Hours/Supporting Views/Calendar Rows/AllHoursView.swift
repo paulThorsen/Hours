@@ -14,20 +14,20 @@ struct AllHoursView : View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack(spacing: 0) {
+            VStack(spacing: CGFloat(0)) {
                 HorizontalDivider(borderColor: Color("lightTextGray"))
                 HourRow(hour: 12, isMorning: true)
                 HorizontalDivider(borderColor: Color("lightTextGray"))
-                ForEach(self.numHours) { hour in
-                        HourRow(hour: hour, isMorning: true)
-                        HorizontalDivider(borderColor: Color("lightTextGray"))
-                }
+//                ForEach(numHours.sorted(), id: \.self) { hour in
+//                        HourRow(hour: hour, isMorning: true)
+//                        HorizontalDivider(borderColor: Color("lightTextGray"))
+//                }
                 HourRow(hour: 12, isMorning: false)
                 HorizontalDivider(borderColor: Color("lightTextGray"))
-                ForEach(self.numHours) { hour in
-                        HourRow(hour: hour, isMorning: false)
-                        HorizontalDivider(borderColor: Color("lightTextGray"))
-                }
+//                ForEach(numHours.sorted(), id: \.self) { hour in
+//                        HourRow(hour: hour, isMorning: false)
+//                        HorizontalDivider(borderColor: Color("lightTextGray"))
+//                }
             }
         }
     }

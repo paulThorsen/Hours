@@ -22,13 +22,13 @@ struct HourOfDay : View {
                 Text(String(hour))
                     .font(.system(size: 23))
                     .bold()
-                    .color(Color("textGray"))
+                    .foregroundColor(Color("textGray"))
                     .offset(x: 3, y: 0)
                 
                 Text(isMorning ? "AM" : "PM")
                     .font(.system(size: 8))
                     .bold()
-                    .color(Color("textGray"))
+                    .foregroundColor(Color("textGray"))
                     .offset(x: -5, y: -5)
             }
         }

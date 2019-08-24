@@ -9,37 +9,37 @@
 import SwiftUI
 import Combine
 
-class HourEvent: BindableObject {
+class HourEvent: ObservableObject {
     let uuid = UUID().uuidString
-    let didChange = PassthroughSubject<HourEvent, Never>()
+    let objectWillChange = PassthroughSubject<Void, Never>()
     
     var eventStartTime: Date = Date() {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
     
     var eventDurationInMins: Int = 0 {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
     
     var eventEndTime: Date = Date() {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
     
     var eventTitle: String = "Hour Event" {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
     
     var eventDate: Date = Date() {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
     

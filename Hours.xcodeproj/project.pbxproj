@@ -33,6 +33,7 @@
 		48A584DC22C83B4400BAF3C9 /* HorizontalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584DB22C83B4400BAF3C9 /* HorizontalDivider.swift */; };
 		48AB032522C842D600371EAC /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB032422C842D600371EAC /* Support.swift */; };
 		48AB032B22C86ADF00371EAC /* SelectedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB032A22C86ADF00371EAC /* SelectedDay.swift */; };
+		48C0020E22DEE9F400D3D75F /* CompletedModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0020D22DEE9F400D3D75F /* CompletedModal.swift */; };
 		48D30F9622CC595300CC8E39 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D30F9522CC595300CC8E39 /* ToDoView.swift */; };
 		48D7610922DAF17000BE67B1 /* TimeInHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7610822DAF17000BE67B1 /* TimeInHour.swift */; };
 		48DA595122CC0B8700EB2180 /* PlannableTimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA595022CC0B8700EB2180 /* PlannableTimeRow.swift */; };
@@ -93,6 +94,7 @@
 		48A584DB22C83B4400BAF3C9 /* HorizontalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDivider.swift; sourceTree = "<group>"; };
 		48AB032422C842D600371EAC /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		48AB032A22C86ADF00371EAC /* SelectedDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDay.swift; sourceTree = "<group>"; };
+		48C0020D22DEE9F400D3D75F /* CompletedModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedModal.swift; sourceTree = "<group>"; };
 		48C82AAF22D034F0003EC8C6 /* libinfo.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libinfo.tbd; path = usr/lib/libinfo.tbd; sourceTree = SDKROOT; };
 		48D30F9522CC595300CC8E39 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		48D7610822DAF17000BE67B1 /* TimeInHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInHour.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		4881002722BC92C20075A8DE /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
+				48C0020F22DEEA0000D3D75F /* ToDoModals */,
 				489C2FAA22D15D9800006D25 /* Modal */,
 				48AB032922C86AB200371EAC /* Day Selection */,
 				48AB032622C8447800371EAC /* Dividers */,
@@ -205,7 +208,6 @@
 				4881001D22BC7ADF0075A8DE /* Models */,
 				4881002722BC92C20075A8DE /* Supporting Views */,
 				4881FFF022BB3BD20075A8DE /* ContentView.swift */,
-				486AF66122D14A3900F2509D /* ToDoEditModal.swift */,
 				48D30F9522CC595300CC8E39 /* ToDoView.swift */,
 				4881FFEE22BB3BD20075A8DE /* SceneDelegate.swift */,
 				486360FC22BDD46600A510DB /* Settings.swift */,
@@ -263,6 +265,15 @@
 				48AB032A22C86ADF00371EAC /* SelectedDay.swift */,
 			);
 			path = "Day Selection";
+			sourceTree = "<group>";
+		};
+		48C0020F22DEEA0000D3D75F /* ToDoModals */ = {
+			isa = PBXGroup;
+			children = (
+				486AF66122D14A3900F2509D /* ToDoEditModal.swift */,
+				48C0020D22DEE9F400D3D75F /* CompletedModal.swift */,
+			);
+			path = ToDoModals;
 			sourceTree = "<group>";
 		};
 		48D30F9722CC59EE00CC8E39 /* Calendar Rows */ = {
@@ -425,6 +436,7 @@
 				4881FFED22BB3BD20075A8DE /* AppDelegate.swift in Sources */,
 				4864D16122D1952B009490D8 /* ColorButton.swift in Sources */,
 				486AF66222D14A3900F2509D /* ToDoEditModal.swift in Sources */,
+				48C0020E22DEE9F400D3D75F /* CompletedModal.swift in Sources */,
 				4881FFEF22BB3BD20075A8DE /* SceneDelegate.swift in Sources */,
 				48AB032B22C86ADF00371EAC /* SelectedDay.swift in Sources */,
 				485C176A22C5D9E500E736CF /* HourOfDay.swift in Sources */,

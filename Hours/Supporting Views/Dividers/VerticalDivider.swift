@@ -14,7 +14,7 @@ struct VerticalDivider : View {
     
     var body: some View {
         Rectangle()
-            .frame(width: 1)
+            .frame(width: BORDER_WIDTH)
             .foregroundColor(borderColor)
     }
 }

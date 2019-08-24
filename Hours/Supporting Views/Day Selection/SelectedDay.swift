@@ -26,13 +26,13 @@ struct SelectedDay : View {
                 Text(String(dayOfMonth))
                     .font(.system(size: 20))
                     .bold()
-                    .color(.white)
+                    .foregroundColor(.white)
                     .frame(alignment: .center)
                 
                 Text(dayOfWeek)
                     .font(.system(size: 8))
                     .bold()
-                    .color(.white)
+                    .foregroundColor(.white)
                     .offset(x: 0, y: -3)
                     .frame(alignment: .center)
             }

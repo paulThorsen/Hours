@@ -17,23 +17,24 @@ struct WeekView : View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 0) {
-                ForEach(self.numDays.identified(by: \.self)) { day in
-//                    if self.todaysDate == 4 {
-//                        isToday = true
+            Text("asdf")
+//            HStack(spacing: 0) {
+//                ForEach(numDays, id: \.self) { day in
+////                    if self.todaysDate == 4 {
+////                        isToday = true
+////                    }
+//                    Button(action: {self.isSelected.toggle()}) {
+//                        if !self.isSelected {
+//                            DayPlaceHolder(dayOfMonth: day, dayOfWeek: WEEK[day % 7], isToday: self.isToday)
+//                        }
+//                        else {
+//                            SelectedDay(dayOfMonth: day, dayOfWeek: WEEK[day % 7], isToday: self.isToday)
+//                        }
 //                    }
-                    Button(action: {self.isSelected.toggle()}) {
-                        if !self.isSelected {
-                            DayPlaceHolder(dayOfMonth: day, dayOfWeek: WEEK[day % 7], isToday: self.isToday)
-                        }
-                        else {
-                            SelectedDay(dayOfMonth: day, dayOfWeek: WEEK[day % 7], isToday: self.isToday)
-                        }
-                    }
-                    VerticalDivider(borderColor: Color("lightTextGray"))
-                    
-                }
-            }.frame(height: 62, alignment: .top)
+//                    VerticalDivider(borderColor: Color("lightTextGray"))
+//
+//                }
+//            }.frame(height: 62, alignment: .top)
         }
     }
 }

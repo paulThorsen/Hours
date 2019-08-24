@@ -10,8 +10,10 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class UserData: BindableObject {
-    let didChange = PassthroughSubject<UserData, Never>()
+final class UserData: ObservableObject {
+    let objectWillChange = PassthroughSubject<Void, Never>()
+    
+    let defaults = UserDefaults.standard
     
     func updateZeroToDoEvents() {
         for toDo in toDoEvents {
@@ -22,40 +24,43 @@ final class UserData: BindableObject {
         }
     }
     
-    var toDoEvents: [ToDoEvent] = [] {
-        didSet {
+    @Published var toDoEvents: [ToDoEvent] = [] {
+        willSet {
             updateZeroToDoEvents()
-            didChange.send(self)
+            objectWillChange.send()
         }
     }
     
     var zeroToDoEvents: Bool = true {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
     
     var notificationsOn: Bool = false {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
+            defaults.set(newValue, forKey: "notificationsOn")
         }
     }
     
     var iCloudCalenderOn: Bool = false {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
+            defaults.set(newValue, forKey: "iCloudCalenderOn")
         }
     }
     
-    var minutesBeforeNotification: Time = .fifteen {
-        didSet {
-            didChange.send(self)
+    var minutesBeforeNotification: Time {
+        willSet {
+            objectWillChange.send()
+            defaults.set(newValue.rawValue, forKey: "minutesBeforeNotification")
         }
     }
     
     var daySelection: Date = Date() {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
     
@@ -78,5 +83,11 @@ final class UserData: BindableObject {
         case thirty = "30"
         case fortyfive = "45"
         case sixty = "60"
+    }
+    
+    init() {
+        self.notificationsOn = defaults.bool(forKey: "notificationsOn")
+        self.iCloudCalenderOn = defaults.bool(forKey: "iCloudCalenderOn")
+        self.minutesBeforeNotification = UserData.Time(rawValue: defaults.string(forKey: "minutesBeforeNotification") ?? "15")!
     }
 }

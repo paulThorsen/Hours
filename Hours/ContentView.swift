@@ -11,53 +11,58 @@ import SwiftUI
 
 struct ContentView : View {
     @EnvironmentObject var userData: UserData
-    
-    var body: some View {
-        NavigationView {
-            TabbedView {
-                VStack(spacing: 0) {
-                    WeekView()
-                    HorizontalDivider(borderColor: Color("borderGray"))
-                    TimeInHour().offset(y: 1)
-                    HorizontalDivider(borderColor: Color("textGray"))
-                    AllHoursView()
-                }
-                .tabItemLabel(VStack {
-                    Image("Calendar").accentColor(Color("red"))
-                    Text("Calendar").accentColor(Color("red"))
-                })
-                .tag(0)
-            
-                
-                
-            HStack {
-                ToDoView()
-                    .environmentObject(userData)
-            }
-            .tabItemLabel(VStack {
-                Image("To-Do")
-                Text("To-Do")
-            })
-            .tag(1)
-        }
-        .navigationBarTitle(Text("Hours"), displayMode: .inline)
-                .navigationBarItems(leading: Button(action: {}) {
-                    Image("Today")
-                    .imageScale(.large)
-                    .accessibility(label: Text("Today"))
-                    .padding()
-                    .foregroundColor(Color("red"))
-                    }, trailing:
-                    PresentationLink(destination: Settings().environmentObject(userData)) {
+    @State var showingSettings = false
+        
+        var settingsButton: some View {
+            Button(action: { self.showingSettings.toggle() }) {
                 Image("Settings")
                     .imageScale(.large)
                     .accessibility(label: Text("Settings"))
                     .padding()
                     .foregroundColor(Color("red"))
-            })
+            }
+        }
+    
+    var body: some View {
+        NavigationView {
+            TabView {
+                VStack {
+                    WeekView()
+                    HorizontalDivider(borderColor: Color("borderGray"))
+                    TimeInHour()
+                    HorizontalDivider(borderColor: Color("borderGray"))
+                    AllHoursView()
+                }
+                .tabItem {
+                    Image("Calendar")
+                    Text("Calendar")
+                }
+                .tag(0)
+            
+                ToDoView()
+                    .environmentObject(userData)
+                    .tabItem{
+                        Image("To-Do")
+                        Text("To-Do")
+            }
+                    .tag(1)
+            
+            
+        }
+        .navigationBarTitle(Text("Hours"), displayMode: .inline)
+        .navigationBarItems(leading: Button(action: {}) {
+            Image("Today")
+            .imageScale(.large)
+            .accessibility(label: Text("Today"))
+            .padding()
+            .foregroundColor(Color("red"))
+            }, trailing:
+            self.settingsButton)
+                .sheet(isPresented: $showingSettings) { Settings().environmentObject(self.userData) }
         }
     }
 }
+
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {

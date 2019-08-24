@@ -10,7 +10,6 @@ import SwiftUI
 
 struct Settings : View {
     @EnvironmentObject var userData: UserData
-
     
     var body: some View {
         NavigationView {
@@ -26,23 +25,23 @@ struct Settings : View {
                     Text("Notifications")
                 }
 
-                if userData.notificationsOn {
-                    VStack(alignment: .leading) {
-                        Text("Minutes before event")
-                        SegmentedControl(selection: $userData.minutesBeforeNotification) {
-                            ForEach(UserData.Time.allCases.identified(by: \.self)) { time in
-                                Text(time.rawValue).tag(time)
-                            }
-                        }
-                    }
-                    .padding(.leading)
-                }
+//                if userData.notificationsOn {
+//                    VStack {
+//                        Text("Minutes before event")
+//                        Picker("Minutes", selection: $userData.minutesBeforeNotification) {
+//                            ForEach(UserData.Time.allCases) { time in
+//                                Text(time.rawValue).tag(time)
+//                            }
+//                        }.pickerStyle(SegmentedPickerStyle())
+//                    }
+//                    .padding(.leading)
+//                }
 
             }
             Spacer()
         }
         .padding(.all)
-        .navigationBarTitle(Text("Settings"), displayMode: .inline)
+//        .navigationBarTitle(Text("Settings"), displayMode: .inline)
         
     }
     }

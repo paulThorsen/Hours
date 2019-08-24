@@ -11,34 +11,40 @@ import SwiftUI
 import Combine
 
 class ToDoEvent: HourEvent {
+    
+    var id: UUID = UUID() {
+        willSet {
+            objectWillChange.send()
+        }
+    }
 
     var isCompleted: Bool = false {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
 
     var minutesSpent: Int = 0 {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
 
     var dateCompleted: Date = Date() {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
 
     var color: String = "orange" {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
 
     var notes: String = "" {
-        didSet {
-            didChange.send(self)
+        willSet {
+            objectWillChange.send()
         }
     }
     
@@ -49,26 +55,8 @@ class ToDoEvent: HourEvent {
         case gray = "borderGray"
     }
 
-//    var super.eventTitle: String = "" {
-//        didSet {
-//            toDoChanged.send(self)
-//        }
-//    }
-    
-//    var isCompleted: Bool
-//    var minutesSpent: Int
-//    var dateCompleted: Date
-//    var color: Color
-//    var notes: String
-//    var image: String
 
     override init() {
-//        isCompleted = false
-//        minutesSpent = 0
-//        dateCompleted = Date()
-//        color = Color("orange")
-//        notes = "String"
-//        image = "notDone"
         super.init()
         eventTitle = "New To-Do"
     }
