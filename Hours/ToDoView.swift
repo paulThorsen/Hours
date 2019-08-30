@@ -29,28 +29,30 @@ struct ToDoView : View {
                 }
                 .disabled(addingToDo)
             }
-//            VStack(spacing: 0) {
-//                HorizontalDivider(borderColor: Color("borderGray"))
-//                ForEach(self.userData.toDoEvents.identified(by: \.uuid)) { toDo in
-//                    if !toDo.isCompleted {
-//                        ToDoEventView(toDo: toDo, updateParent: self.$didChange, addingIsDisabled: self.$addingToDo)
-//                        HorizontalDivider(borderColor: Color("borderGray"))
-//                    }
-//                }
-//                if self.userData.toDoEvents.count == 0 {
-//                    Button(action: {self.userData.toDoEvents.append(ToDoEvent())}) {
-//                        VStack {
-//                            Text("Tap to add a new To-Do")
-//                                .foregroundColor(Color("textGray"))
-//                            Image("add")
-//                                .foregroundColor(Color("textGray"))
-//                        }
-//
-//                    }
-//                    .frame(height: CELL_HEIGHT)
-//                }
-//            }
-//            .padding(.bottom)
+            VStack(spacing: 0) {
+                HorizontalDivider(borderColor: Color("borderGray"))
+                if userData.toDoEvents.count != 0 {
+                    ForEach(userData.toDoEvents) { toDo in
+                        if !toDo.isCompleted {
+                            ToDoEventView(toDo: toDo, updateParent: self.$didChange, addingIsDisabled: self.$addingToDo)
+                            HorizontalDivider(borderColor: Color("borderGray"))
+                        }
+                    }
+                }
+                if self.userData.toDoEvents.count == 0 {
+                    Button(action: {self.userData.toDoEvents.append(ToDoEvent())}) {
+                        VStack {
+                            Text("Tap to add a new To-Do")
+                                .foregroundColor(Color("textGray"))
+                            Image("add")
+                                .foregroundColor(Color("textGray"))
+                        }
+
+                    }
+                    .frame(height: CELL_HEIGHT)
+                }
+            }
+            .padding(.bottom)
             HStack {
                 Text("Completed")
                     .foregroundColor(Color("mainTextGray"))
@@ -59,15 +61,15 @@ struct ToDoView : View {
 
                 Spacer()
             }
-//            VStack(spacing: 0) {
-//                HorizontalDivider(borderColor: Color("borderGray"))
-//                ForEach(self.userData.toDoEvents.identified(by: \.uuid)) { toDo in
-//                    if toDo.isCompleted {
-//                        CompletedToDoView(toDo: toDo, updateParent: self.$didChange, addingIsDisabled: self.$addingToDo)
-//                        HorizontalDivider(borderColor: Color("borderGray"))
-//                    }
-//                }
-//            }
+            VStack(spacing: 0) {
+                HorizontalDivider(borderColor: Color("borderGray"))
+                ForEach(userData.toDoEvents) { toDo in
+                    if toDo.isCompleted {
+                        CompletedToDoView(toDo: toDo, updateParent: self.$didChange, addingIsDisabled: self.$addingToDo)
+                        HorizontalDivider(borderColor: Color("borderGray"))
+                    }
+                }
+            }
         }
         .padding(.top)
     }

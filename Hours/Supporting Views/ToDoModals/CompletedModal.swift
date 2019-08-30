@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CompletedModal : View {
     @EnvironmentObject var userData: UserData
-    @Environment(\.presentationMode) var isPresented
+    @Environment(\.presentationMode) var presentationMode
     @State var showingDeleteAlert = false
     @State var showingCompletedAlert = false
     @State var toDo: ToDoEvent
@@ -20,9 +20,9 @@ struct CompletedModal : View {
             ZStack {
                 Rectangle()
                     .foregroundColor(Color("cellWhite"))
-//                    .frame(height: 60)
+                    .frame(height: 60)
                 Text(toDo.eventTitle)
-//                    .font(.system(size: 20))
+                    .font(.system(size: 20))
                     .foregroundColor(Color("textGray"))
             }
             HorizontalDivider(borderColor: Color("borderGray"))
@@ -30,47 +30,48 @@ struct CompletedModal : View {
                 Text(self.toDo.notes)
             }
             .padding()
-//            Spacer().frame(height: 100)
+            Spacer().frame(height: 100)
             
             HorizontalDivider(borderColor: Color("borderGray"))
-//            VStack {
-////                HorizontalDivider(borderColor: Color("borderGray"))
-////                Button(action: {showingCompletedAlert = true}) {
-////                    ZStack {
-////                        Rectangle()
-////                            .foregroundColor(Color("cellWhite"))
-////                        Text("Mark as Incomplete")
-//////                            .foregroundColor(Color("textGray"))
-////                    }
-////                }
-//                .ActionSheet(self.$showingCompletedAlert) {
-//                    Alert(title: Text("Mark \"" + self.toDo.eventTitle + "\" as incomplete?"), primaryButton: .destructive(Text("Confirm"), onTrigger: {
-//                        self.toDo.isCompleted = false;
-//                        self.isPresented?.value = false
-//                    }), secondaryButton: .cancel())
-//                    
-//                }
-//                HorizontalDivider(borderColor: Color("borderGray"))
-//                Button(action: {self.showingDeleteAlert = true}) {
-//                    ZStack {
-//                        Rectangle()
-//                            .foregroundColor(Color("cellWhite"))
-//                            .accentColor(.black)
-//                        Text("Delete")
-//                            .foregroundColor(Color("red"))
-//
-//                    }
-//                }
-//                .ActionSheet(self.$showingDeleteAlert) {
-//                    Alert(title: Text("Delete \"" + self.toDo.eventTitle + "\"?"), message: Text("This can't be undone"), primaryButton: .destructive(Text("Delete"), onTrigger: {
-//                            self.userData.removeToDo(id: self.toDo.uuid);
-//                            self.isPresented?.value = false;
-//                    }), secondaryButton: .cancel())
-//                    
-//                }
-//                HorizontalDivider(borderColor: Color("borderGray"))
-//                
-//            }
+            VStack {
+                HorizontalDivider(borderColor: Color("borderGray"))
+                Button(action: { self.showingCompletedAlert = true}) {
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(Color("cellWhite"))
+                        Text("Mark as Incomplete")
+                            .foregroundColor(Color("textGray"))
+                    }
+                }
+                .actionSheet(isPresented: $showingCompletedAlert) {
+                    ActionSheet(title: Text("Mark \"" + self.toDo.eventTitle + "\" as incomplete?"), message: Text("You can always complete it later on."), buttons: [
+                        .default(Text("Confirm")) {
+                            self.toDo.isCompleted = false
+                            self.presentationMode.wrappedValue.dismiss()
+                        },
+                        .destructive(Text("Cancel"))])
+                }
+                HorizontalDivider(borderColor: Color("borderGray"))
+                Button(action: {self.showingDeleteAlert = true}) {
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(Color("cellWhite"))
+                            .accentColor(.black)
+                        Text("Delete")
+                            .foregroundColor(Color("red"))
+
+                    }
+                }
+                .actionSheet(isPresented: $showingDeleteAlert) {
+                    ActionSheet(title: Text("Delete \"" + self.toDo.eventTitle + "\"?"), message: Text("This can't be undone"), buttons: [
+                        .destructive(Text("Delete")) {
+                            self.userData.removeToDo(id: self.toDo.id)
+                            self.presentationMode.wrappedValue.dismiss()
+                        },
+                        .default(Text("Cancel"))])
+                }
+                HorizontalDivider(borderColor: Color("borderGray"))
+            }
             Spacer()
         }
     }

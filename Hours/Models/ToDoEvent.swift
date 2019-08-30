@@ -10,14 +10,8 @@ import Foundation
 import SwiftUI
 import Combine
 
-class ToDoEvent: HourEvent {
+class ToDoEvent: HourEvent, Identifiable {
     
-    var id: UUID = UUID() {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-
     var isCompleted: Bool = false {
         willSet {
             objectWillChange.send()

@@ -10,8 +10,13 @@ import SwiftUI
 import Combine
 
 class HourEvent: ObservableObject {
-    let uuid = UUID().uuidString
     let objectWillChange = PassthroughSubject<Void, Never>()
+    
+    var id: UUID = UUID() {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     var eventStartTime: Date = Date() {
         willSet {

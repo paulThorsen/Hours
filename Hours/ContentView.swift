@@ -40,7 +40,7 @@ struct ContentView : View {
                 .tag(0)
             
                 ToDoView()
-                    .environmentObject(userData)
+                    .environmentObject(self.userData)
                     .tabItem{
                         Image("To-Do")
                         Text("To-Do")

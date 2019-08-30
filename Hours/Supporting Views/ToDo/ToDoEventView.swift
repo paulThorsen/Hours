@@ -16,9 +16,9 @@ struct ToDoEventView : View {
     
     @State var hapticDeleteFeedback = false
     let triggerLength: CGFloat = -200.0
-    
+
     @State var isPresented = false
-    
+
     @State private var location = CGPoint.zero
     
     var toDoIndex: Int {
@@ -27,37 +27,40 @@ struct ToDoEventView : View {
     
     var body: some View {
         return ZStack {
-            Rectangle()
-                .frame(height: CELL_HEIGHT)
-                .foregroundColor(Color("red"))
+            //just for testing
+//            Rectangle()
+//                .frame(height: CELL_HEIGHT)
+//                .foregroundColor(Color("red"))
             ZStack {
                 Rectangle()
                     .frame(height: CELL_HEIGHT)
-                    .foregroundColor(Color(self.userData.toDoEvents[self.toDoIndex].color))
-                
-//                HStack {
-//                    Button(action: { self.userData.toDoEvents[self.toDoIndex].isCompleted.toggle(); self.updateParent.toggle()
-//                    }) {
-//                    Image("notDone")
-////                        .foregroundColor(Color("textGray"))
-//                        .padding()
-//                        .blendMode(.multiply)
-//                    }
-//                    TextField("Title", text: self.$toDo.eventTitle, onEditingChanged: { if $0 { self.addingIsDisabled = true }})
-//                        .foregroundColor(.white)
-//                        .multilineTextAlignment(.leading)
-//                        .truncationMode(.tail)
-//                        .textContentType(.none)
-//                    Spacer().frame(width: CGFloat(10))
-//                    Image("more")
-//                        .foregroundColor(Color("textGray"))
-//                        .padding()
-//                        .blendMode(.multiply)
-//                        .sheet(isPresented: $isPresented) {
-//                            ToDoEditModal(toDo: self.toDo)
-//                    }
-//
-//                }
+                    .foregroundColor(Color("red"))
+
+                HStack {
+                    Button(action: { self.userData.toDoEvents[self.toDoIndex].isCompleted.toggle(); self.updateParent.toggle()
+                    }) {
+                    Image("notDone")
+                        .foregroundColor(Color("textGray"))
+                        .padding()
+                        .blendMode(.multiply)
+                    }
+                    TextField("Title", text: self.$toDo.eventTitle, onEditingChanged: { if $0 { self.addingIsDisabled = true }})
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
+                        .truncationMode(.tail)
+                        .textContentType(.none)
+                    Spacer().frame(width: 10)
+                    Button(action: {self.isPresented = true}) {
+                    Image("more")
+                        .foregroundColor(Color("textGray"))
+                        .padding()
+                        .blendMode(.multiply)
+                        
+                    }
+                    .sheet(isPresented: $isPresented) {
+                        ToDoEditModal(toDo: self.userData.toDoEvents[self.toDoIndex]).environmentObject(self.userData)
+                    }
+                }
             }
 //            .gesture(
 //                DragGesture(minimumDistance: 20, coordinateSpace: .global)
@@ -102,10 +105,8 @@ struct ToDoEventView : View {
 
 #if DEBUG
 struct ToDoEventView_Previews : PreviewProvider {
-    @State static var didChange = false
-    @State static var addingIsDisabled = true
     static var previews: some View {
-        return ToDoEventView(toDo: ToDoEvent(), updateParent: $didChange, addingIsDisabled: $addingIsDisabled)
+        return ToDoEventView(toDo: ToDoEvent(), updateParent: .constant(false), addingIsDisabled: .constant(true))
             .environmentObject(UserData())
         
     }

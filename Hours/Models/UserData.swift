@@ -10,32 +10,32 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class UserData: ObservableObject {
+final class UserData: ObservableObject, Identifiable {
     let objectWillChange = PassthroughSubject<Void, Never>()
     
     let defaults = UserDefaults.standard
     
-    func updateZeroToDoEvents() {
-        for toDo in toDoEvents {
-            zeroToDoEvents = true
-            if !toDo.isCompleted {
-                zeroToDoEvents = false
-            }
-        }
-    }
+//    func updateZeroToDoEvents() {
+//        for toDo in toDoEvents {
+//            zeroToDoEvents = true
+//            if !toDo.isCompleted {
+//                zeroToDoEvents = false
+//            }
+//        }
+//    }
     
-    @Published var toDoEvents: [ToDoEvent] = [] {
+    var toDoEvents: [ToDoEvent] = [] {
         willSet {
-            updateZeroToDoEvents()
+//            updateZeroToDoEvents()
             objectWillChange.send()
         }
     }
     
-    var zeroToDoEvents: Bool = true {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+//    var zeroToDoEvents: Bool = true {
+//        willSet {
+//            objectWillChange.send()
+//        }
+//    }
     
     var notificationsOn: Bool = false {
         willSet {
@@ -64,11 +64,11 @@ final class UserData: ObservableObject {
         }
     }
     
-    func removeToDo(id: String) {
+    func removeToDo(id: UUID) {
         for i in 0...self.toDoEvents.count - 1 {
-            if self.toDoEvents[i].uuid == id {
+            if self.toDoEvents[i].id == id {
                 toDoEvents.remove(at: i)
-                updateZeroToDoEvents() 
+//                updateZeroToDoEvents() 
                 break
             }
         }
