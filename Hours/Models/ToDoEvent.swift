@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-class ToDoEvent: HourEvent, Identifiable {
+class ToDoEvent: HourEvent {
     
     var isCompleted: Bool = false {
         willSet {
@@ -30,13 +30,13 @@ class ToDoEvent: HourEvent, Identifiable {
         }
     }
 
-    var color: String = "orange" {
+    @Published var color: String = "orange" {
         willSet {
             objectWillChange.send()
         }
     }
 
-    var notes: String = "" {
+    @Published var notes: String = "" {
         willSet {
             objectWillChange.send()
         }

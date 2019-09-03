@@ -24,11 +24,63 @@ final class UserData: ObservableObject, Identifiable {
 //        }
 //    }
     
-    var toDoEvents: [ToDoEvent] = [] {
+    @Published var completedToDos: [ToDoEvent] = [] {
         willSet {
 //            updateZeroToDoEvents()
             objectWillChange.send()
         }
+    }
+    
+    @Published var toDoEvents: [ToDoEvent] = [] {
+        willSet {
+//            updateZeroToDoEvents()
+            objectWillChange.send()
+        }
+    }
+    func markAsComplete(id: UUID) {
+        for i in 0...self.toDoEvents.count - 1 {
+            if self.toDoEvents[i].id == id {
+                self.toDoEvents[i].isCompleted.toggle()
+                self.completedToDos.append(toDoEvents[i])
+                self.toDoEvents.remove(at: i)
+                break
+            }
+        }
+    }
+    
+    func markAsIncomplete(id: UUID) {
+        for i in 0...self.completedToDos.count - 1 {
+            if self.completedToDos[i].id == id {
+                self.completedToDos[i].isCompleted.toggle()
+                self.toDoEvents.append(completedToDos[i])
+                self.completedToDos.remove(at: i)
+                break
+            }
+        }
+    }
+    
+    func removeToDo(id: UUID) {
+        for i in 0...self.toDoEvents.count - 1 {
+            if self.toDoEvents[i].id == id {
+                self.toDoEvents.remove(at: i)
+//                updateZeroToDoEvents()
+                break
+            }
+        }
+    }
+    
+    func removeCompletedToDo(id: UUID) {
+            for i in 0...self.completedToDos.count - 1 {
+                if self.completedToDos[i].id == id {
+                    self.completedToDos.remove(at: i)
+    //                updateZeroToDoEvents()
+                    break
+                }
+            }
+        }
+    
+    func addToDo(toDo: ToDoEvent) {
+        self.toDoEvents.append(toDo)
     }
     
 //    var zeroToDoEvents: Bool = true {
@@ -58,24 +110,10 @@ final class UserData: ObservableObject, Identifiable {
         }
     }
     
-    var daySelection: Date = Date() {
+    @Published var daySelection: Date = Date() {
         willSet {
             objectWillChange.send()
         }
-    }
-    
-    func removeToDo(id: UUID) {
-        for i in 0...self.toDoEvents.count - 1 {
-            if self.toDoEvents[i].id == id {
-                toDoEvents.remove(at: i)
-//                updateZeroToDoEvents() 
-                break
-            }
-        }
-    }
-    
-    func addToDo(toDo: ToDoEvent) {
-        self.toDoEvents.append(toDo)
     }
     
     enum Time: String, CaseIterable {

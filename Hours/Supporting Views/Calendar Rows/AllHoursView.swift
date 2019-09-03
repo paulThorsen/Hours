@@ -24,8 +24,8 @@ struct AllHoursView : View {
 //                }
                 HourRow(hour: 12, isMorning: false)
                 HorizontalDivider(borderColor: Color("lightTextGray"))
-//                ForEach(numHours.sorted(), id: \.self) { hour in
-//                        HourRow(hour: hour, isMorning: false)
+//                ForEach((1...11).reversed(), id: \.self) {
+//                        HourRow(hour: $0, isMorning: false)
 //                        HorizontalDivider(borderColor: Color("lightTextGray"))
 //                }
             }

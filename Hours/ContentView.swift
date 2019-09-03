@@ -13,15 +13,15 @@ struct ContentView : View {
     @EnvironmentObject var userData: UserData
     @State var showingSettings = false
         
-        var settingsButton: some View {
-            Button(action: { self.showingSettings.toggle() }) {
-                Image("Settings")
-                    .imageScale(.large)
-                    .accessibility(label: Text("Settings"))
-                    .padding()
-                    .foregroundColor(Color("red"))
-            }
+    var settingsButton: some View {
+        Button(action: { self.showingSettings.toggle() }) {
+            Image("Settings")
+                .imageScale(.large)
+                .accessibility(label: Text("Settings"))
+                .padding()
+                .foregroundColor(Color("red"))
         }
+    }
     
     var body: some View {
         NavigationView {
@@ -44,10 +44,8 @@ struct ContentView : View {
                     .tabItem{
                         Image("To-Do")
                         Text("To-Do")
-            }
-                    .tag(1)
-            
-            
+                }
+                .tag(1)
         }
         .navigationBarTitle(Text("Hours"), displayMode: .inline)
         .navigationBarItems(leading: Button(action: {}) {

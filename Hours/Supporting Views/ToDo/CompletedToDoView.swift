@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CompletedToDoView : View {
     @EnvironmentObject private var userData: UserData
-    @ObservedObject var toDo: ToDoEvent
+    @ObservedObject var completedToDo: ToDoEvent
     @Binding var updateParent: Bool
     @Binding var addingIsDisabled: Bool
     
@@ -22,7 +22,7 @@ struct CompletedToDoView : View {
     @State private var location = CGPoint.zero
     
     var toDoIndex: Int {
-        userData.toDoEvents.firstIndex(where: { $0.id == toDo.id })!
+        userData.completedToDos.firstIndex(where: { $0.id == completedToDo.id })!
     }
 
     var body: some View {
@@ -32,22 +32,24 @@ struct CompletedToDoView : View {
                 .foregroundColor(Color("completedToDo"))
             
             HStack {
-                Image("done")
-                    .foregroundColor(Color("green"))
-                    .padding()
-                    .blendMode(.multiply)
-                Text(self.userData.toDoEvents[self.toDoIndex].eventTitle)
+                Button(action: {self.userData.markAsIncomplete(id: self.completedToDo.id)}) {
+                    Image("done")
+                        .foregroundColor(Color("green"))
+                        .padding()
+                        .blendMode(.multiply)
+                }
+                Text(self.completedToDo.eventTitle)
                     .foregroundColor(Color("mainTextGray"))
                 
                 Spacer()
                 Button(action: {self.isPresented = true}) {
-                Image("more")
-                    .foregroundColor(Color("textGray"))
-                    .padding()
-                    .blendMode(.multiply)
+                    Image("more")
+                        .foregroundColor(Color("textGray"))
+                        .padding()
+                        .blendMode(.multiply)
                 }
                 .sheet(isPresented: $isPresented) {
-                    CompletedModal(toDo: self.toDo).environmentObject(self.userData)
+                    CompletedModal(completedToDo: self.$userData.completedToDos[self.toDoIndex]).environmentObject(self.userData)
                 }
             }
         }
@@ -93,7 +95,7 @@ struct CompletedToDoView : View {
 #if DEBUG
 struct CompletedToDoView_Previews : PreviewProvider {
     static var previews: some View {
-        return CompletedToDoView(toDo: ToDoEvent(), updateParent: .constant(false), addingIsDisabled: .constant(true))
+        return CompletedToDoView(completedToDo: ToDoEvent(), updateParent: .constant(false), addingIsDisabled: .constant(true))
             .environmentObject(UserData())
     }
 }

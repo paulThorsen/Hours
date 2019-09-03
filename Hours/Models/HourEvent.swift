@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-class HourEvent: ObservableObject {
+class HourEvent: ObservableObject, Identifiable {
     let objectWillChange = PassthroughSubject<Void, Never>()
     
     var id: UUID = UUID() {

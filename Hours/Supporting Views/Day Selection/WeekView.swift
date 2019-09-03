@@ -17,7 +17,7 @@ struct WeekView : View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            Text("asdf")
+            Spacer()
 //            HStack(spacing: 0) {
 //                ForEach(numDays, id: \.self) { day in
 ////                    if self.todaysDate == 4 {

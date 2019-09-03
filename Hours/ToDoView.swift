@@ -20,7 +20,6 @@ struct ToDoView : View {
                     .foregroundColor(Color("mainTextGray"))
                     .font(.headline)
                     .padding(.leading)
-                
                 Spacer()
                 Button(action: {self.userData.toDoEvents.append(ToDoEvent())}) {
                     Image("add")
@@ -31,13 +30,10 @@ struct ToDoView : View {
             }
             VStack(spacing: 0) {
                 HorizontalDivider(borderColor: Color("borderGray"))
-                if userData.toDoEvents.count != 0 {
-                    ForEach(userData.toDoEvents) { toDo in
-                        if !toDo.isCompleted {
-                            ToDoEventView(toDo: toDo, updateParent: self.$didChange, addingIsDisabled: self.$addingToDo)
-                            HorizontalDivider(borderColor: Color("borderGray"))
-                        }
-                    }
+
+                ForEach(userData.toDoEvents) { toDo in
+                    ToDoEventView(toDo: toDo, updateParent: self.$didChange, addingIsDisabled: self.$addingToDo)
+                    HorizontalDivider(borderColor: Color("borderGray"))
                 }
                 if self.userData.toDoEvents.count == 0 {
                     Button(action: {self.userData.toDoEvents.append(ToDoEvent())}) {
@@ -47,7 +43,6 @@ struct ToDoView : View {
                             Image("add")
                                 .foregroundColor(Color("textGray"))
                         }
-
                     }
                     .frame(height: CELL_HEIGHT)
                 }
@@ -63,9 +58,9 @@ struct ToDoView : View {
             }
             VStack(spacing: 0) {
                 HorizontalDivider(borderColor: Color("borderGray"))
-                ForEach(userData.toDoEvents) { toDo in
+                ForEach(userData.completedToDos) { toDo in
                     if toDo.isCompleted {
-                        CompletedToDoView(toDo: toDo, updateParent: self.$didChange, addingIsDisabled: self.$addingToDo)
+                        CompletedToDoView(completedToDo: toDo, updateParent: self.$didChange, addingIsDisabled: self.$addingToDo)
                         HorizontalDivider(borderColor: Color("borderGray"))
                     }
                 }

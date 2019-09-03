@@ -13,7 +13,7 @@ struct ToDoEditModal : View {
     @Environment(\.presentationMode) var presentationMode
     @State var showingDeleteAlert = false
     @State var showingCompleteAlert = false
-    @State var toDo: ToDoEvent
+    @Binding var toDo: ToDoEvent
     
     var toDoIndex: Int {
         userData.toDoEvents.firstIndex(where: { $0.id == toDo.id })!
@@ -51,6 +51,8 @@ struct ToDoEditModal : View {
                     ColorSelection(toDo: $toDo)
                         .padding(.bottom)
                 }
+//                Rectangle().foregroundColor(Color("borderGray")).frame(height: 40)
+                
                 VStack(spacing: 0) {
                     HorizontalDivider(borderColor: Color("borderGray"))
                     Button (action: {self.showingCompleteAlert = true}) {
@@ -60,11 +62,12 @@ struct ToDoEditModal : View {
                             Text("Mark as Complete")
                                 .foregroundColor(Color("textGray"))
                         }
+                        .frame(height: 60)
                     }
                     .actionSheet(isPresented: $showingCompleteAlert) {
                         ActionSheet(title: Text("Mark \"" + self.toDo.eventTitle + "\" as complete?"), message: Text("Great job!"), buttons: [
                             .default(Text("Complete")) {
-                                self.userData.toDoEvents[self.toDoIndex].isCompleted = true
+                                self.userData.markAsComplete(id: self.toDo.id)
                                 self.presentationMode.wrappedValue.dismiss()
                             },
                             .destructive(Text("Cancel"))])
@@ -79,6 +82,7 @@ struct ToDoEditModal : View {
                                 .foregroundColor(Color("red"))
                                 .padding()
                         }
+                        .frame(height: 60)
                     }
                     .actionSheet(isPresented: $showingDeleteAlert) {
                         ActionSheet(title: Text("Delete \"" + self.toDo.eventTitle + "\"?"), message: Text("This can't be undone"), buttons: [
@@ -89,17 +93,16 @@ struct ToDoEditModal : View {
                             .default(Text("Cancel"))])
                     }
                     HorizontalDivider(borderColor: Color("borderGray"))
-
                  }
                 Spacer()
-        }
+            }
     }
 }
 
 #if DEBUG
 struct ToDoEditModal_Previews : PreviewProvider {
     static var previews: some View {
-        ToDoEditModal(toDo: ToDoEvent())
+        ToDoEditModal(toDo: .constant(ToDoEvent()))
             .environmentObject(UserData())
             
     }

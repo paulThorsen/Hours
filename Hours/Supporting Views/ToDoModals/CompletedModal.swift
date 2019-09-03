@@ -13,7 +13,7 @@ struct CompletedModal : View {
     @Environment(\.presentationMode) var presentationMode
     @State var showingDeleteAlert = false
     @State var showingCompletedAlert = false
-    @State var toDo: ToDoEvent
+    @Binding var completedToDo: ToDoEvent
     
     var body: some View {
         VStack(spacing: 0) {
@@ -21,19 +21,19 @@ struct CompletedModal : View {
                 Rectangle()
                     .foregroundColor(Color("cellWhite"))
                     .frame(height: 60)
-                Text(toDo.eventTitle)
+                Text(completedToDo.eventTitle)
                     .font(.system(size: 20))
                     .foregroundColor(Color("textGray"))
             }
             HorizontalDivider(borderColor: Color("borderGray"))
             HStack {
-                Text(self.toDo.notes)
+                Text(self.completedToDo.notes)
             }
             .padding()
             Spacer().frame(height: 100)
             
             HorizontalDivider(borderColor: Color("borderGray"))
-            VStack {
+            VStack(spacing: 0) {
                 HorizontalDivider(borderColor: Color("borderGray"))
                 Button(action: { self.showingCompletedAlert = true}) {
                     ZStack {
@@ -42,11 +42,12 @@ struct CompletedModal : View {
                         Text("Mark as Incomplete")
                             .foregroundColor(Color("textGray"))
                     }
+                    .frame(height: 70)
                 }
                 .actionSheet(isPresented: $showingCompletedAlert) {
-                    ActionSheet(title: Text("Mark \"" + self.toDo.eventTitle + "\" as incomplete?"), message: Text("You can always complete it later on."), buttons: [
+                    ActionSheet(title: Text("Mark \"" + self.completedToDo.eventTitle + "\" as incomplete?"), message: Text("You can always complete it later on."), buttons: [
                         .default(Text("Confirm")) {
-                            self.toDo.isCompleted = false
+                            self.userData.markAsIncomplete(id: self.completedToDo.id)
                             self.presentationMode.wrappedValue.dismiss()
                         },
                         .destructive(Text("Cancel"))])
@@ -59,13 +60,13 @@ struct CompletedModal : View {
                             .accentColor(.black)
                         Text("Delete")
                             .foregroundColor(Color("red"))
-
                     }
+                    .frame(height: 70)
                 }
                 .actionSheet(isPresented: $showingDeleteAlert) {
-                    ActionSheet(title: Text("Delete \"" + self.toDo.eventTitle + "\"?"), message: Text("This can't be undone"), buttons: [
+                    ActionSheet(title: Text("Delete \"" + self.completedToDo.eventTitle + "\"?"), message: Text("This can't be undone"), buttons: [
                         .destructive(Text("Delete")) {
-                            self.userData.removeToDo(id: self.toDo.id)
+                            self.userData.removeCompletedToDo(id: self.completedToDo.id)
                             self.presentationMode.wrappedValue.dismiss()
                         },
                         .default(Text("Cancel"))])
@@ -80,7 +81,7 @@ struct CompletedModal : View {
 #if DEBUG
 struct CompletedModal_Previews : PreviewProvider {
     static var previews: some View {
-        CompletedModal(toDo: ToDoEvent())
+        CompletedModal(completedToDo: .constant(ToDoEvent()))
             .environmentObject(UserData())
     }
 }
