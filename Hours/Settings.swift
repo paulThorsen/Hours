@@ -13,37 +13,48 @@ struct Settings : View {
     
     var body: some View {
         NavigationView {
-        VStack(spacing: 20) {
-                Toggle(isOn: $userData.iCloudCalenderOn) {
-                    Text("Show iCloud Events")
-                }
-            HorizontalDivider(borderColor: Color("borderGray"))
-
-                VStack(alignment: .leading) {
-
-                Toggle(isOn: $userData.notificationsOn) {
-                    Text("Notifications")
-                }
-
-                    if self.userData.notificationsOn {
+            ZStack {
+                Color("bg")
+                
+                VStack(spacing: 0) {
                     VStack {
-                        Text("Minutes before event")
-                        Picker("Minutes", selection: $userData.minutesBeforeNotification) {
-                            ForEach(UserData.Time.allCases, id: \.self) { time in
-                                Text(time.rawValue).tag(time)
-                            }
-                        }.pickerStyle(SegmentedPickerStyle())
+                        Toggle(isOn: $userData.iCloudCalenderOn) {
+                                Text("Show iCloud Events")
+                        }
+                        .padding(.all)
                     }
-                    .padding(.leading)
-                }
+                    .background(Color("cellWhite"))
+                    
+                    HorizontalDivider(borderColor: Color("borderGray"))
 
+                    VStack(alignment: .leading) {
+                        VStack(spacing: 0) {
+                            Toggle(isOn: $userData.notificationsOn) {
+                                Text("Notifications")
+                            }
+                            
+                            if self.userData.notificationsOn {
+                                VStack {
+                                    Text("Minutes before event")
+                                        .foregroundColor(Color("textGray"))
+                                    Picker("Minutes", selection: $userData.minutesBeforeNotification) {
+                                        ForEach(UserData.Time.allCases, id: \.self) { time in
+                                            Text(time.rawValue).tag(time)
+                                        }
+                                    }.pickerStyle(SegmentedPickerStyle())
+                                }
+                                .padding(.all)
+                            }
+                        }
+                        .padding(.all)
+                    }
+                    .background(Color("cellWhite"))
+                    HorizontalDivider(borderColor: Color("borderGray"))
+                    Spacer()
+                }
+                .navigationBarTitle(Text("Settings"), displayMode: .inline)
             }
-            Spacer()
         }
-        .padding(.all)
-        .navigationBarTitle(Text("Settings"), displayMode: .inline)
-        
-    }
     }
 }
 

@@ -20,6 +20,10 @@ struct ToDoEditModal : View {
     }
     
     var body: some View {
+        ZStack {
+            Color("bg")
+            .edgesIgnoringSafeArea(.all)
+        
             VStack(spacing: 0) {
                 ZStack {
                     Rectangle()
@@ -32,27 +36,38 @@ struct ToDoEditModal : View {
                         .truncationMode(.tail)
                 }
                 HorizontalDivider(borderColor: Color("borderGray"))
-                HStack {
-                    TextField("Notes", text: $toDo.notes)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(40)
-                }
-                .padding()
-                Spacer().frame(height: 100)
                 
-                HorizontalDivider(borderColor: Color("borderGray"))
-                VStack {
-                    HStack {
-                        Text("Color")
-                            .frame(alignment: .topLeading)
-                            .padding()
+                ZStack {
+                    Color("cellWhite")
+                    .edgesIgnoringSafeArea(.all)
+                    
+                    VStack {
+                        HStack {
+                            TextField("Notes", text: $toDo.notes)
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(40)
+                        }
+                        .padding()
                         Spacer()
                     }
-                    ColorSelection(toDo: $toDo)
-                        .padding(.bottom)
                 }
-//                Rectangle().foregroundColor(Color("borderGray")).frame(height: 40)
+                .frame(height: 200)
                 
+                HorizontalDivider(borderColor: Color("borderGray"))
+                    VStack {
+                        HStack {
+                            Text("Color")
+                                .frame(alignment: .topLeading)
+                                .padding()
+                            Spacer()
+                        }
+                        ColorSelection(toDo: $toDo)
+                            .padding(.bottom)
+                    }
+                .background(Color("cellWhite"))
+                HorizontalDivider(borderColor: Color("borderGray"))
+//                Rectangle().foregroundColor(Color("borderGray")).frame(height: 40)
+                Spacer().frame(height: 50)
                 VStack(spacing: 0) {
                     HorizontalDivider(borderColor: Color("borderGray"))
                     Button (action: {self.showingCompleteAlert = true}) {
@@ -67,8 +82,8 @@ struct ToDoEditModal : View {
                     .actionSheet(isPresented: $showingCompleteAlert) {
                         ActionSheet(title: Text("Mark \"" + self.toDo.eventTitle + "\" as complete?"), message: Text("Great job!"), buttons: [
                             .default(Text("Complete")) {
-                                self.userData.markAsComplete(id: self.toDo.id)
                                 self.presentationMode.wrappedValue.dismiss()
+                                self.userData.markAsComplete(id: self.toDo.id)
                             },
                             .destructive(Text("Cancel"))])
                     }
@@ -96,6 +111,7 @@ struct ToDoEditModal : View {
                  }
                 Spacer()
             }
+        }
     }
 }
 

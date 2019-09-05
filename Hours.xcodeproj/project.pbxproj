@@ -24,22 +24,38 @@
 		4881002122BC89020075A8DE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881002022BC89020075A8DE /* UserData.swift */; };
 		4881002322BC89CE0075A8DE /* ToDoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881002222BC89CE0075A8DE /* ToDoEvent.swift */; };
 		4881FFED22BB3BD20075A8DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881FFEC22BB3BD20075A8DE /* AppDelegate.swift */; };
-		4881FFEF22BB3BD20075A8DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881FFEE22BB3BD20075A8DE /* SceneDelegate.swift */; };
 		4881FFF122BB3BD20075A8DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881FFF022BB3BD20075A8DE /* ContentView.swift */; };
 		4881FFF322BB3BD40075A8DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4881FFF222BB3BD40075A8DE /* Assets.xcassets */; };
 		4881FFF622BB3BD40075A8DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4881FFF522BB3BD40075A8DE /* Preview Assets.xcassets */; };
 		4881FFF922BB3BD40075A8DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4881FFF722BB3BD40075A8DE /* LaunchScreen.storyboard */; };
 		48A584DA22C83B1600BAF3C9 /* VerticalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584D922C83B1600BAF3C9 /* VerticalDivider.swift */; };
 		48A584DC22C83B4400BAF3C9 /* HorizontalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A584DB22C83B4400BAF3C9 /* HorizontalDivider.swift */; };
+		48A94308231F892000952975 /* ToDos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48A94306231F892000952975 /* ToDos.xcdatamodeld */; };
 		48AB032522C842D600371EAC /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB032422C842D600371EAC /* Support.swift */; };
 		48AB032B22C86ADF00371EAC /* SelectedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB032A22C86ADF00371EAC /* SelectedDay.swift */; };
+		48B0B4262320B35900078E7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B0B4252320B35900078E7A /* SceneDelegate.swift */; };
 		48C0020E22DEE9F400D3D75F /* CompletedModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0020D22DEE9F400D3D75F /* CompletedModal.swift */; };
+		48C0674B2320BCED00D58D8A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0674A2320BCED00D58D8A /* View.swift */; };
 		48D30F9622CC595300CC8E39 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D30F9522CC595300CC8E39 /* ToDoView.swift */; };
 		48D7610922DAF17000BE67B1 /* TimeInHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7610822DAF17000BE67B1 /* TimeInHour.swift */; };
 		48DA595122CC0B8700EB2180 /* PlannableTimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA595022CC0B8700EB2180 /* PlannableTimeRow.swift */; };
 		48F50D2B22C8167C00EE84A1 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F50D2A22C8167C00EE84A1 /* WeekView.swift */; };
 		48F50D2D22C816B100EE84A1 /* DaySelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F50D2C22C816B100EE84A1 /* DaySelect.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		48A943092320450500952975 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = wrapper.xcmappingmodel;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# mapc\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		4881000022BB3BD40075A8DE /* PBXContainerItemProxy */ = {
@@ -81,7 +97,6 @@
 		4881002222BC89CE0075A8DE /* ToDoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoEvent.swift; sourceTree = "<group>"; };
 		4881FFE922BB3BD20075A8DE /* Hours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4881FFEC22BB3BD20075A8DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4881FFEE22BB3BD20075A8DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4881FFF022BB3BD20075A8DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4881FFF222BB3BD40075A8DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4881FFF522BB3BD40075A8DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -92,9 +107,12 @@
 		4887A56B22CDAF9500802F69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		48A584D922C83B1600BAF3C9 /* VerticalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalDivider.swift; sourceTree = "<group>"; };
 		48A584DB22C83B4400BAF3C9 /* HorizontalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDivider.swift; sourceTree = "<group>"; };
+		48A94307231F892000952975 /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
 		48AB032422C842D600371EAC /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		48AB032A22C86ADF00371EAC /* SelectedDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDay.swift; sourceTree = "<group>"; };
+		48B0B4252320B35900078E7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		48C0020D22DEE9F400D3D75F /* CompletedModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedModal.swift; sourceTree = "<group>"; };
+		48C0674A2320BCED00D58D8A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		48C82AAF22D034F0003EC8C6 /* libinfo.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libinfo.tbd; path = usr/lib/libinfo.tbd; sourceTree = SDKROOT; };
 		48D30F9522CC595300CC8E39 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		48D7610822DAF17000BE67B1 /* TimeInHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInHour.swift; sourceTree = "<group>"; };
@@ -158,6 +176,7 @@
 		4881001D22BC7ADF0075A8DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				48A94306231F892000952975 /* ToDos.xcdatamodeld */,
 				4881001E22BC7B240075A8DE /* HourEvent.swift */,
 				4881002022BC89020075A8DE /* UserData.swift */,
 				4881002222BC89CE0075A8DE /* ToDoEvent.swift */,
@@ -204,12 +223,13 @@
 			isa = PBXGroup;
 			children = (
 				4881FFEC22BB3BD20075A8DE /* AppDelegate.swift */,
+				48B0B4252320B35900078E7A /* SceneDelegate.swift */,
 				48AB032422C842D600371EAC /* Support.swift */,
+				48C0674C2320BCFB00D58D8A /* Extensions */,
 				4881001D22BC7ADF0075A8DE /* Models */,
 				4881002722BC92C20075A8DE /* Supporting Views */,
 				4881FFF022BB3BD20075A8DE /* ContentView.swift */,
 				48D30F9522CC595300CC8E39 /* ToDoView.swift */,
-				4881FFEE22BB3BD20075A8DE /* SceneDelegate.swift */,
 				486360FC22BDD46600A510DB /* Settings.swift */,
 				4881FFF722BB3BD40075A8DE /* LaunchScreen.storyboard */,
 				4881FFF222BB3BD40075A8DE /* Assets.xcassets */,
@@ -276,6 +296,14 @@
 			path = ToDoModals;
 			sourceTree = "<group>";
 		};
+		48C0674C2320BCFB00D58D8A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48C0674A2320BCED00D58D8A /* View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		48D30F9722CC59EE00CC8E39 /* Calendar Rows */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +346,7 @@
 				4881FFE722BB3BD20075A8DE /* Resources */,
 			);
 			buildRules = (
+				48A943092320450500952975 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -427,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A94308231F892000952975 /* ToDos.xcdatamodeld in Sources */,
 				4864D16B22D59341009490D8 /* CompletedToDoView.swift in Sources */,
 				4881002322BC89CE0075A8DE /* ToDoEvent.swift in Sources */,
 				4864D16D22D59341009490D8 /* ToDoEventView.swift in Sources */,
@@ -437,7 +467,7 @@
 				4864D16122D1952B009490D8 /* ColorButton.swift in Sources */,
 				486AF66222D14A3900F2509D /* ToDoEditModal.swift in Sources */,
 				48C0020E22DEE9F400D3D75F /* CompletedModal.swift in Sources */,
-				4881FFEF22BB3BD20075A8DE /* SceneDelegate.swift in Sources */,
+				48B0B4262320B35900078E7A /* SceneDelegate.swift in Sources */,
 				48AB032B22C86ADF00371EAC /* SelectedDay.swift in Sources */,
 				485C176A22C5D9E500E736CF /* HourOfDay.swift in Sources */,
 				48D30F9622CC595300CC8E39 /* ToDoView.swift in Sources */,
@@ -449,6 +479,7 @@
 				48D7610922DAF17000BE67B1 /* TimeInHour.swift in Sources */,
 				48DA595122CC0B8700EB2180 /* PlannableTimeRow.swift in Sources */,
 				4881002122BC89020075A8DE /* UserData.swift in Sources */,
+				48C0674B2320BCED00D58D8A /* View.swift in Sources */,
 				48F50D2B22C8167C00EE84A1 /* WeekView.swift in Sources */,
 				485C177022C5E9CC00E736CF /* AllHoursView.swift in Sources */,
 				486360FD22BDD46600A510DB /* Settings.swift in Sources */,
@@ -624,7 +655,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -646,7 +677,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -772,6 +803,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		48A94306231F892000952975 /* ToDos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48A94307231F892000952975 /* Events.xcdatamodel */,
+			);
+			currentVersion = 48A94307231F892000952975 /* Events.xcdatamodel */;
+			path = ToDos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4881FFE122BB3BD20075A8DE /* Project object */;
 }

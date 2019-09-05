@@ -17,8 +17,14 @@ class ToDoEvent: HourEvent {
             objectWillChange.send()
         }
     }
+    
+    var dateCreated: Date = Date() {
+        willSet {
+            objectWillChange.send()
+        }
+    }
 
-    var minutesSpent: Int = 0 {
+    var minutesSpent: Int32 = 0 {
         willSet {
             objectWillChange.send()
         }

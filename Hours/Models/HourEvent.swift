@@ -24,7 +24,7 @@ class HourEvent: ObservableObject, Identifiable {
         }
     }
     
-    var eventDurationInMins: Int = 0 {
+    var eventDurationInMins: Int32 = 0 {
         willSet {
             objectWillChange.send()
         }

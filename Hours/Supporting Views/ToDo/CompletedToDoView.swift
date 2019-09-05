@@ -11,7 +11,6 @@ import SwiftUI
 struct CompletedToDoView : View {
     @EnvironmentObject private var userData: UserData
     @ObservedObject var completedToDo: ToDoEvent
-    @Binding var updateParent: Bool
     @Binding var addingIsDisabled: Bool
     
     @State var isPresented = false
@@ -32,12 +31,16 @@ struct CompletedToDoView : View {
                 .foregroundColor(Color("completedToDo"))
             
             HStack {
-                Button(action: {self.userData.markAsIncomplete(id: self.completedToDo.id)}) {
+//                Button(action: {
+//                    let generator = UIImpactFeedbackGenerator(style: .heavy)
+//                    generator.impactOccurred()
+//                    self.userData.markAsIncomplete(id: self.completedToDo.id)
+//                }) {
                     Image("done")
                         .foregroundColor(Color("green"))
                         .padding()
                         .blendMode(.multiply)
-                }
+//                }
                 Text(self.completedToDo.eventTitle)
                     .foregroundColor(Color("mainTextGray"))
                 
@@ -95,7 +98,7 @@ struct CompletedToDoView : View {
 #if DEBUG
 struct CompletedToDoView_Previews : PreviewProvider {
     static var previews: some View {
-        return CompletedToDoView(completedToDo: ToDoEvent(), updateParent: .constant(false), addingIsDisabled: .constant(true))
+        return CompletedToDoView(completedToDo: ToDoEvent(), addingIsDisabled: .constant(true))
             .environmentObject(UserData())
     }
 }

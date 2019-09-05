@@ -10,8 +10,24 @@ import SwiftUI
 
 
 struct ContentView : View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     @EnvironmentObject var userData: UserData
+    
     @State var showingSettings = false
+    
+    // MARK: CoreData properties
+
+//    @FetchRequest(
+//        entity: Event.entity(),
+//        sortDescriptors: [
+//            NSSortDescriptor(keyPath: \Event.dateCreated, ascending: true),
+////            NSSortDescriptor(keyPath: \Events.creator, ascending: false)
+//        ]
+//    ) var toDoEvents: FetchedResults<Event>
+    
+    @FetchRequest(fetchRequest: toDosFetchRequest) var items: FetchedResults<ToDoEvent2>
         
     var settingsButton: some View {
         Button(action: { self.showingSettings.toggle() }) {
@@ -26,12 +42,17 @@ struct ContentView : View {
     var body: some View {
         NavigationView {
             TabView {
-                VStack {
-                    WeekView()
-                    HorizontalDivider(borderColor: Color("borderGray"))
-                    TimeInHour()
-                    HorizontalDivider(borderColor: Color("borderGray"))
-                    AllHoursView()
+                ZStack {
+                    Color("bg")
+                    .edgesIgnoringSafeArea(.all)
+                    
+                    VStack {
+                        WeekView()
+                        HorizontalDivider(borderColor: Color("borderGray"))
+                        TimeInHour()
+                        HorizontalDivider(borderColor: Color("borderGray"))
+                        AllHoursView()
+                    }
                 }
                 .tabItem {
                     Image("Calendar")
@@ -41,12 +62,13 @@ struct ContentView : View {
             
                 ToDoView()
                     .environmentObject(self.userData)
-                    .tabItem{
+                    .tabItem {
                         Image("To-Do")
                         Text("To-Do")
-                }
-                .tag(1)
+                    }
+                    .tag(1)
         }
+        .accentColor(Color("red"))
         .navigationBarTitle(Text("Hours"), displayMode: .inline)
         .navigationBarItems(leading: Button(action: {}) {
             Image("Today")

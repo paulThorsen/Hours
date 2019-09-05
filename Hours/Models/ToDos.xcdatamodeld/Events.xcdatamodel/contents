@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14897.2" systemVersion="19A546d" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CompletedEvent" representedClassName="CompletedEvent" syncable="YES" codeGenerationType="class"/>
+    <entity name="ToDoEvent2" representedClassName="ToDoEvent2" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="dateCompleted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="eventDurationInMins" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="eventEndTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="eventStartTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="eventTitle" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="minutesSpent" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CompletedEvent" positionX="-63" positionY="72" width="128" height="43"/>
+        <element name="ToDoEvent2" positionX="-63" positionY="-18" width="128" height="223"/>
+    </elements>
+</model>
